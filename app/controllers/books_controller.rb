@@ -22,6 +22,8 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    flash[:notice] = "Book was successfully created."
+    
   end
   
   def update
@@ -35,6 +37,7 @@ class BooksController < ApplicationController
     book.destroy
     redirect_to '/books'
   end
+  
   private
   
   def book_params
